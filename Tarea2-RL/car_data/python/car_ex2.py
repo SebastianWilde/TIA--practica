@@ -1,4 +1,4 @@
-
+####Regresion logistica con car data sin regularizacion--------------------
 #Clases del data set
 buying = {'vhigh':1, 'high':2, 'med':3, 'low':4}
 maint = {'vhigh':1, 'high':2, 'med':3, 'low':4}

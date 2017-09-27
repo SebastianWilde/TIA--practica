@@ -1,3 +1,4 @@
+####Regresion logistica con car data con regularizacion--------------------
 #Clases del data set
 buying = {'vhigh':1, 'high':2, 'med':3, 'low':4}
 maint = {'vhigh':1, 'high':2, 'med':3, 'low':4}
@@ -38,15 +39,15 @@ y_vgood[np.where(y_vgood==4)] = 1
 y_vgood[np.where(y_vgood!=4)] = 0
 
 ##Regresion logistica para cada clase
-import ex2
+import ex2_reg
 print("\n---------------Iniciando con la clase unacc---------------\n")
-theta_unacc = ex2.reg_log(X,y_unacc)
+theta_unacc = ex2_reg.reg_log_reg(X,y_unacc)
 print("\n---------------Iniciando con la clase acc---------------\n")
-theta_acc = ex2.reg_log(X,y_acc)
+theta_acc = ex2_reg.reg_log_reg(X,y_acc)
 print("\n---------------Iniciando con la clase good---------------\n")
-theta_good = ex2.reg_log(X,y_good)
+theta_good = ex2_reg.reg_log_reg(X,y_good)
 print("\n---------------Iniciando con la clase vgood---------------\n")
-theta_vgood = ex2.reg_log(X,y_vgood)
+theta_vgood = ex2_reg.reg_log_reg(X,y_vgood)
 
 ##Prueba con car-prueba test
 test = np.genfromtxt('car-prueba.data',delimiter=",",dtype='str')
@@ -58,13 +59,15 @@ new_test = np.zeros((test.shape))
 for i in xrange(0,col_test):
 	for j in xrange(0,fila_test):
 		new_test[j,i] = metadata[i][str(test[j,i])]
-print (test,new_test)
+#print (test,new_test)
 #Captura la data para las 6 clases
 X_test = new_test[:,:6]
 # Add intercept term to x and X_test
-m = X_test.shape[0]
-X1 = np.column_stack((np.ones((m,1)),X_test))
-print(new_test[:,5])
+from sklearn.preprocessing import PolynomialFeatures
+# Add intercept term to x and X_test
+poly = PolynomialFeatures(degree=6)
+X1 = poly.fit_transform(X)
+
 y_unacc_test = y_acc_test = y_good_test = y_vgood_test = new_test[:,6]
 ##Para el caso unacc
 y_unacc_test[np.where(y_unacc_test!=1)] = 0
@@ -84,10 +87,10 @@ p = predict.predict(theta_unacc, X1);
 print('Train Accuracy to class unacc: {:f}'.format(np.mean(p == y_unacc_test) * 100))
 
 p = predict.predict(theta_acc, X1);
-print('Train Accuracy to class unacc: {:f}'.format(np.mean(p == y_acc_test) * 100))
+print('Train Accuracy to class acc: {:f}'.format(np.mean(p == y_acc_test) * 100))
 
 p = predict.predict(theta_good, X1);
-print('Train Accuracy to class unacc: {:f}'.format(np.mean(p == y_good_test) * 100))
+print('Train Accuracy to class good: {:f}'.format(np.mean(p == y_good_test) * 100))
 
 p = predict.predict(theta_vgood, X1);
-print('Train Accuracy to class unacc: {:f}'.format(np.mean(p == y_vgood_test) * 100))
+print('Train Accuracy to class vgood: {:f}'.format(np.mean(p == y_vgood_test) * 100))

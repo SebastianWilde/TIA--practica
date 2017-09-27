@@ -14,6 +14,7 @@ def mapFeature(X1, X2):
 	degree = 6
 	#quads = Series([X1**(i-j) * X2**j for i in range(1,degree+1) for j in range(i+1)])
 	#return  Series([1]).append([Series(X1), Series(X2), quads])
+	print(sum(range(degree+2)))
 	out = np.ones(( X1.shape[0], sum(range(degree + 2)) ))
 	curr_column = 1
 	for i in xrange(1, degree + 1):

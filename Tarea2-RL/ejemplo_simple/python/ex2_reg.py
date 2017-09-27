@@ -107,6 +107,7 @@ plt.ylabel('Microchip Test 2')
 plt.title('lambda = {:f}'.format(lambda_reg))
 
 
+print(X.shape,theta.shape)
 
 # Compute accuracy on our training set
 p = predict.predict(theta, X);
