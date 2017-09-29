@@ -20,7 +20,7 @@ def costFunctionReg(theta, X, y, lambda_reg,return_grad = False):
 #               derivatives of the cost w.r.t. each parameter in theta
 
 	primer_elemento = np.dot(y.T,sigmoid(np.dot(X,theta)))
-	segundo_elemento = np.dot((1-y).T,sigmoid(np.dot(X,theta)))
+	segundo_elemento = np.dot((1-y).T,1-sigmoid(np.dot(X,theta)))
 	regularizacion = (float(lambda_reg)/(2*m)) * np.power(theta[1:theta.shape[0]],2).sum()
 	J = (-1./m) * (primer_elemento+segundo_elemento).sum()+regularizacion
 

@@ -20,5 +20,6 @@ def predict(theta, X):
 	p = sigmoid(np.dot(X,theta))
 	p[p >= 0.5] = 1;
 	p[p < 0.5] = 0;
+	print("Valor predecido",p)
 #=========================================================================
 	return p

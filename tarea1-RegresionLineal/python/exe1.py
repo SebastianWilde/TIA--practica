@@ -79,7 +79,7 @@ fig.colorbar(surf)
 plt.xlabel('theta_0')
 plt.ylabel('theta_1')
 plt.show(block=False)
-plt.hold(False)
+#plt.hold(False)
 
 
 fig = plt.figure()
@@ -88,10 +88,10 @@ cset = plt.contour(theta0_vals, theta1_vals, J_vals, np.logspace(-2, 3, 20), cma
 fig.colorbar(cset)
 plt.xlabel('theta_0')
 plt.ylabel('theta_1')
-plt.hold(True)
+#plt.hold(True)
 plt.plot(theta[0,0], theta[1,0], 'rx', markersize=10, linewidth=2)
 plt.show(block=False)
-plt.hold(False)
+#plt.hold(False)
 
 
 raw_input('Program paused. Press enter to finish.\n')

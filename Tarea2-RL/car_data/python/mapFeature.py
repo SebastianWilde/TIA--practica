@@ -24,6 +24,12 @@ def mapFeature(X1, X2):
 	return out
 
 
+def mapFeature3(X1,X2,X3,X4,X5,X6):
+	out = np.ones((X1.shape[0],8))
+	out[:,6] = np.power(X4,2)
+	out[:,7] = np.power(X2,2)
+	return out
+
 
 def mapFeature2(X1, X2):
 	degree = 6
