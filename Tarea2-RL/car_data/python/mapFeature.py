@@ -25,9 +25,16 @@ def mapFeature(X1, X2):
 
 
 def mapFeature3(X1,X2,X3,X4,X5,X6):
-	out = np.ones((X1.shape[0],8))
-	out[:,6] = np.power(X4,2)
-	out[:,7] = np.power(X2,2)
+	out = np.ones((X1.shape[0],9))
+	out[:,0] = np.power(X1,2)
+	out[:,1] = np.power(X2,2)
+	out[:,2] = X3
+	out[:,3] = np.power(X4 * X1 * X2,4)
+	out[:,4] = X5
+	out[:,5] = np.power(X6*X2*X4,2)
+	out[:,6] = np.power(X2*X1,2)
+	out[:,7] = np.power(X6,2)
+	out[:,8] = X4*X6
 	return out
 
 

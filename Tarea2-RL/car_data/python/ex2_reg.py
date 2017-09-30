@@ -14,7 +14,7 @@ def reg_log_reg(X,y):
 ## =========== Part 1: Regularized Logistic Regression ============
 	X1 = mapFeature.mapFeature3(X[:,0], X[:,1],X[:,2], X[:,3],X[:,4], X[:,5])
 	#print(X2.shape)
-	#poly = PolynomialFeatures(degree=6)
+	#poly = PolynomialFeatures(degree=4)
 	#X1 = poly.fit_transform(X)
 	#print(X.shape,X1.shape)
 	#X = mapFeature.mapFeature(X[:,0], X[:,1])

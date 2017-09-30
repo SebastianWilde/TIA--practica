@@ -53,8 +53,8 @@ fila_test,col_test = data_test.shape
 #Captura la data para las 6 clases
 X_test = data_test[:,:6]
 # Add intercept term to x and X_test
-#poly = PolynomialFeatures(degree=6)
-#X1 = poly.fit_transform(X)
+#poly = PolynomialFeatures(degree=4)
+#X1 = poly.fit_transform(X_test)
 X1 = mapFeature.mapFeature3(X_test[:,0], X_test[:,1],X_test[:,2], 
 	X_test[:,3],X_test[:,4], X_test[:,5])
 
