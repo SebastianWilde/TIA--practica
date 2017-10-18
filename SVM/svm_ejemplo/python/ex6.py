@@ -122,7 +122,7 @@ sigma = 0.1
 # convergence.
 model= svmt.svmTrain(X, y, C, "gaussian")
 #plt.close()
-#vb.visualizeBoundary(X, y, model)
+vb.visualizeBoundary(X, y, model)
 
 raw_input('Program paused. Press enter to continue.')
 ## =============== Part 6: Visualizing Dataset 3 ================
