@@ -1,7 +1,6 @@
 ####Regresion logistica con car data sin regularizacion--------------------
 #Clases del data set
 import numpy as np
-from sigmoid import sigmoid
 
 
 data = np.loadtxt('new_car.txt',delimiter=",")
@@ -76,7 +75,7 @@ print("\n Para vgood C es %f y sigma es %f \n" %(C_vgood,sigma_vgood))
 ##---------------Prueba con car-prueba test------------------------
 print("\n-------Iniciando la prueba con car-prueba----------------\n")
 
-
+import gaussianKernelGramMatrix as gkgm
 p1 = model_unacc.predict(gkgm.gaussianKernelGramMatrix(X_test, X))
 print('\nTrain Accuracy to class unacc: {:f}'.format(np.mean(p1 == y_unacc_test) * 100))
 p2 = model_acc.predict(gkgm.gaussianKernelGramMatrix(X_test, X))

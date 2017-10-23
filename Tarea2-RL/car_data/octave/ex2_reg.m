@@ -6,7 +6,7 @@ X = mapFeature(X(:,1), X(:,2),X(:,3),X(:,4),X(:,5),X(:,6));
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1 (you should vary this)
-lambda = 1;
+lambda = 0.2;
 
 % Set Options
 options = optimset('GradObj', 'on', 'MaxIter', 400);

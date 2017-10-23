@@ -5,6 +5,7 @@
 %% Initialization
 data = load('new_car.txt');
 X = data(:, [1:6]); y = data(:, 7);
+%X = mapFeature(X);
 %%One vs all
 y_unacc = y;
 for i=1:size(y_unacc,1),
@@ -47,7 +48,7 @@ end
 %%Etapa de prueba
 data_test = load('new_car_prueba.txt');
 X_test = data_test(:, [1:6]); y_test = data_test(:, 7);
-
+%X_test = mapFeature(X_test);
 y_test_unacc = y_test;
 for i=1:size(y_test_unacc,1),
 	if y_test_unacc(i) ~= 1,

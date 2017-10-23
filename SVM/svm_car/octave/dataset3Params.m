@@ -24,7 +24,7 @@ sigma = 0.3;
 %
 %Algunos posibles valores para C y sigma
 %posibles_valores = [0.01,0.03,0.1,0.3,1,3,10,30];
-posibles_valores = [0.1,1];
+posibles_valores = [0.01,0.1,1];
 %Promedio de predicciones malas
 error_inicial = 1.0;
 
